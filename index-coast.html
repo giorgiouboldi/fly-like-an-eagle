@@ -88,7 +88,7 @@ layout: {
 // wait for the terrain and sky to load before starting animation
 map.on('load', () => {
 const animationDuration = 80000000;
-const cameraAltitude = 1000;
+const cameraAltitude = 1500;
 // get the overall distance of each route so we can interpolate along them
 const routeDistance = turf.lineDistance(turf.lineString(targetRoute));
 const cameraRouteDistance = turf.lineDistance(
