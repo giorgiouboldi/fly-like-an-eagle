@@ -21,9 +21,9 @@ body { margin: 0; padding: 0; }
 const map = new mapboxgl.Map({
 container: 'map',
 zoom: 11.53,
-center: [6.5615, 46.0598],
-pitch: 40,
-bearing: -180,
+center: [10.8861762, 43.9384497],
+pitch: 70,
+bearing: 0,
 style: 'mapbox://styles/giorgiouboldi/cii7r2hbz00gzbkluj3e1bb8f',
 interactive: false
 });
@@ -55,7 +55,7 @@ map.addLayer({
 'type': 'sky',
 'paint': {
 'sky-type': 'atmosphere',
-'sky-atmosphere-sun': [20.0, 90.0],
+'sky-atmosphere-sun': [90.0, 90.0],
 'sky-atmosphere-sun-intensity': 15
 }
 });
@@ -88,7 +88,7 @@ layout: {
 // wait for the terrain and sky to load before starting animation
 map.on('load', () => {
 const animationDuration = 800000;
-const cameraAltitude = 800;
+const cameraAltitude = 600;
 // get the overall distance of each route so we can interpolate along them
 const routeDistance = turf.lineDistance(turf.lineString(targetRoute));
 const cameraRouteDistance = turf.lineDistance(
