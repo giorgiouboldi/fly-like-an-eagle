@@ -22,7 +22,7 @@ const map = new mapboxgl.Map({
 container: 'map',
 zoom: 11.53,
 center: [6.5615, 46.0598],
-pitch: 10,
+pitch: 40,
 bearing: -180,
 style: 'mapbox://styles/giorgiouboldi/cii7r2hbz00gzbkluj3e1bb8f',
 interactive: false
@@ -47,7 +47,7 @@ map.addSource('mapbox-dem', {
 'type': 'raster-dem',
 'url': 'mapbox://mapbox.mapbox-terrain-dem-v1',
 'tileSize': 512,
-'maxzoom': 14
+'maxzoom': 20
 });
 map.setTerrain({ 'source': 'mapbox-dem', 'exaggeration': 1.5 });
 map.addLayer({
@@ -55,8 +55,8 @@ map.addLayer({
 'type': 'sky',
 'paint': {
 'sky-type': 'atmosphere',
-'sky-atmosphere-sun': [0.0, 90.0],
-'sky-atmosphere-sun-intensity': 5
+'sky-atmosphere-sun': [20.0, 90.0],
+'sky-atmosphere-sun-intensity': 15
 }
 });
 map.addSource('trace', {
@@ -76,7 +76,7 @@ source: 'trace',
 id: 'line',
 paint: {
 'line-color': 'orange',
-'line-width': 1
+'line-width': 0
 },
 layout: {
 'line-cap': 'round',
@@ -87,8 +87,8 @@ layout: {
 
 // wait for the terrain and sky to load before starting animation
 map.on('load', () => {
-const animationDuration = 8000000;
-const cameraAltitude = 400;
+const animationDuration = 800000;
+const cameraAltitude = 800;
 // get the overall distance of each route so we can interpolate along them
 const routeDistance = turf.lineDistance(turf.lineString(targetRoute));
 const cameraRouteDistance = turf.lineDistance(
