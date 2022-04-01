@@ -45,7 +45,7 @@ const cameraRoute = routes.camera;
 map.on('load', () => {
 map.addSource('mapbox-dem', {
 'type': 'raster-dem',
-'url': 'mapbox://mapbox.mapbox-terrain-dem-v1',
+'url': 'mapbox://styles/giorgiouboldi/cii7r2hbz00gzbkluj3e1bb8f',
 'tileSize': 512,
 'maxzoom': 20
 });
@@ -87,8 +87,8 @@ layout: {
 
 // wait for the terrain and sky to load before starting animation
 map.on('load', () => {
-const animationDuration = 80000000;
-const cameraAltitude = 1500;
+const animationDuration = 150000000;
+const cameraAltitude = 1000;
 // get the overall distance of each route so we can interpolate along them
 const routeDistance = turf.lineDistance(turf.lineString(targetRoute));
 const cameraRouteDistance = turf.lineDistance(
